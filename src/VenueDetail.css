@@ -1,0 +1,211 @@
+/* Venue Detail & Glossary Styles */
+.detail-container {
+    width: 95%;
+    /* Wider */
+    max-width: 1400px;
+    /* Increased from 1000px */
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.detail-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.detail-header h2 {
+    font-size: 3.5rem;
+    /* Larger */
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.detail-location {
+    display: inline-block;
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--color-secondary);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    font-weight: 600;
+    font-size: 1.1rem;
+    /* Larger */
+}
+
+/* Gallery Grid */
+.detail-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Larger items */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 250px;
+    /* Taller images */
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-primary);
+    z-index: 10;
+}
+
+/* Info Cards */
+.detail-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.info-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+    /* More padding */
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    /* Larger */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.75rem;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list li {
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+    /* Brighter text */
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.7;
+    /* Readable line height */
+    font-size: 1.1rem;
+    /* Larger body text */
+}
+
+.info-list li::before {
+    content: '👉';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.2rem;
+}
+
+.budget-section li::before {
+    content: '💰';
+}
+
+.facility-section p {
+    color: #e2e8f0;
+    font-size: 1.2rem;
+    /* Larger text */
+    line-height: 1.6;
+}
+
+/* Back Button Top */
+.detail-back-btn {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    transition: all 0.2s;
+}
+
+.detail-back-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+    backdrop-filter: blur(5px);
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    transform: scale(0.8);
+    animation: zoomIn 0.3s ease-out forwards;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: -10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 768px) {
+    .detail-info {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .full-width {
+        grid-column: span 2;
+    }
+}

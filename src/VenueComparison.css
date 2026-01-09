@@ -1,0 +1,157 @@
+.comparison-container {
+    width: 95%;
+    /* Wider like table */
+    max-width: 1600px;
+    /* Increased from 1200px */
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.comparison-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.comparison-header h2 {
+    font-size: 3rem;
+    /* Larger */
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    /* More gap */
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    /* More padding */
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.vs-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    width: 70px;
+    /* Larger badge */
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    border: 5px solid var(--color-surface);
+    z-index: 10;
+}
+
+/* Feature Rows */
+.compare-card {
+    background: rgba(15, 23, 42, 0.6);
+    padding: 2rem;
+    /* More padding */
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.compare-card:hover {
+    background: rgba(15, 23, 42, 0.9);
+    border-color: var(--color-primary);
+}
+
+.compare-title {
+    font-size: 2rem;
+    /* Much larger */
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 0.75rem;
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compare-price {
+    text-align: center;
+    color: var(--color-secondary);
+    font-weight: 800;
+    font-size: 1.4rem;
+    /* Larger price */
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.compare-section-title {
+    font-size: 1.1rem;
+    /* Larger section headers */
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.compare-list {
+    list-style: none;
+    font-size: 1.1rem;
+    /* Clearer text */
+    margin-bottom: 1.5rem;
+}
+
+.compare-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.compare-list li::before {
+    content: '•';
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    /* Larger bullet */
+    line-height: 1.2rem;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        position: relative;
+    }
+
+    .vs-badge {
+        top: 50%;
+        left: 50%;
+    }
+
+    .comparison-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}

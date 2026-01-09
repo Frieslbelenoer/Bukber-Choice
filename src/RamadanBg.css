@@ -1,0 +1,281 @@
+/* Ramadan Background Styles */
+.ramadan-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background-color: #0f172a;
+}
+
+/* 1. Animated Gradient Layer */
+.bg-gradient {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%,
+            rgba(76, 29, 149, 0.15),
+            rgba(15, 23, 42, 1),
+            rgba(124, 58, 237, 0.1));
+    animation: rotateGradient 60s linear infinite;
+    opacity: 0.8;
+}
+
+/* 2. Islamic Pattern Overlay */
+.bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L37 23L60 30L37 37L30 60L23 37L0 30L23 23Z' fill='%23f59e0b' fill-opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+    animation: pulsePattern 10s ease-in-out infinite alternate;
+}
+
+/* 3. Floating Lanterns/Decorations */
+.hanging-decoration-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.string {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.decoration-lantern {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+    animation: swingLantern 4s ease-in-out infinite alternate;
+    transform-origin: top center;
+    z-index: 1;
+}
+
+/* Detailed Lantern Styling */
+.decoration-lantern::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fbbf24;
+}
+
+/* Decoration Positions */
+.lantern-1 {
+    right: 10%;
+    top: 60px;
+    animation-delay: 0s;
+    transform: scale(0.9);
+}
+
+.string-1 {
+    right: 10%;
+    height: 60px;
+}
+
+.lantern-2 {
+    right: 5%;
+    top: 90px;
+    animation-delay: 1.5s;
+    transform: scale(1);
+}
+
+.string-2 {
+    right: 5%;
+    height: 90px;
+}
+
+.lantern-3 {
+    left: 8%;
+    top: 70px;
+    animation-delay: 0.5s;
+    transform: scale(0.85);
+}
+
+.string-3 {
+    left: 8%;
+    height: 70px;
+}
+
+.lantern-4 {
+    left: 15%;
+    top: 40px;
+    animation-delay: 2s;
+    transform: scale(0.7);
+    opacity: 0.8;
+}
+
+.string-4 {
+    left: 15%;
+    height: 40px;
+}
+
+.star-1 {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    color: #fbbf24;
+    font-size: 2rem;
+    animation: twinkle 2s infinite alternate;
+    text-shadow: 0 0 15px #fbbf24;
+}
+
+.string-5 {
+    left: 50%;
+    height: 60px;
+}
+
+/* 4. Floating Particles (Stars) */
+.particle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp var(--duration) linear infinite;
+    box-shadow: 0 0 4px white;
+}
+
+/* 5. Glowing Moon */
+.bg-moon {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: -20px 10px 0 0 #fcd34d;
+    transform: rotate(-15deg);
+    filter: drop-shadow(0 0 30px rgba(252, 211, 77, 0.6));
+    animation: floatMoon 6s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+/* 6. Mosque Skyline Silhouette Layers */
+.bg-mosque-skyline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.layer-back {
+    height: 250px;
+    opacity: 0.4;
+    filter: blur(2px);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300' preserveAspectRatio='none'%3E%3Cpath d='M0,300 L1200,300 L1200,180 C1100,180 1000,250 900,220 C800,190 700,280 600,240 C500,200 400,260 300,220 C200,180 100,240 0,200 Z' fill='%236d28d9' fill-opacity='0.5'/%3E%3C/svg%3E");
+    z-index: -2;
+    animation: sway 20s ease-in-out infinite alternate;
+}
+
+.layer-front {
+    height: 200px;
+    opacity: 1;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300' preserveAspectRatio='none'%3E%3Cpath d='M0,300 L0,280 C50,280 50,200 100,200 C150,200 150,280 200,280 C230,280 230,150 280,150 C330,150 330,280 360,280 C400,280 400,220 440,220 C480,220 480,280 520,280 L1200,280 L1200,300 Z' fill='%230f172a' fill-opacity='1'/%3E%3Cpath d='M0,300 L1200,300 L1200,240 C1150,240 1150,150 1100,150 C1050,150 1050,240 1000,240 C950,240 950,100 900,100 C850,100 850,240 800,240 C750,240 750,180 700,180 C650,180 650,300 0,300 Z' fill='%231e293b' fill-opacity='0.8'/%3E%3C/svg%3E");
+}
+
+/* Vignette & Golden Frame */
+.bg-vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.bg-golden-frame {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid transparent;
+    border-image: linear-gradient(to bottom, #fbbf24 0%, transparent 30%, transparent 70%, #fbbf24 100%) 1;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0.5;
+}
+
+@keyframes floatMoon {
+    0% {
+        transform: rotate(-15deg) translateY(0);
+    }
+
+    100% {
+        transform: rotate(-15deg) translateY(-10px);
+    }
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulsePattern {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes swingLantern {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+    }
+}

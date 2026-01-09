@@ -1,0 +1,219 @@
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 10%, #1e1b4b 0%, #0f172a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* --- Moon Animation --- */
+.moon-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+    animation: float 4s ease-in-out infinite;
+}
+
+.moon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: -20px 8px 0 0 #f59e0b;
+    /* Golden Crescent */
+    transform: rotate(-15deg);
+    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.4));
+}
+
+/* --- Stars --- */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle var(--duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+.s1 {
+    top: 20%;
+    left: 20%;
+    width: 3px;
+    height: 3px;
+    --duration: 3s;
+    --delay: 0s;
+}
+
+.s2 {
+    top: 15%;
+    right: 25%;
+    width: 2px;
+    height: 2px;
+    --duration: 4s;
+    --delay: 1s;
+}
+
+.s3 {
+    top: 40%;
+    left: 10%;
+    width: 2px;
+    height: 2px;
+    --duration: 2.5s;
+    --delay: 0.5s;
+}
+
+.s4 {
+    top: 30%;
+    right: 15%;
+    width: 3px;
+    height: 3px;
+    --duration: 3.5s;
+    --delay: 1.5s;
+}
+
+.s5 {
+    top: 60%;
+    left: 80%;
+    width: 2px;
+    height: 2px;
+    --duration: 3s;
+    --delay: 2s;
+}
+
+/* --- Hanging Lantern (Simple CSS) --- */
+.lantern-string {
+    position: absolute;
+    top: 0;
+    right: 15%;
+    width: 2px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: swing 3s ease-in-out infinite alternate;
+    transform-origin: top center;
+}
+
+.lantern-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 45px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+}
+
+.lantern-body::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 5px;
+    background: #cbd5e1;
+}
+
+.lantern-body::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #f59e0b;
+    border-radius: 50%;
+}
+
+/* --- Typography --- */
+.loading-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin: 0;
+    /* background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    animation: fadeUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+.loading-subtitle {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeUp 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/* --- Animations --- */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes swing {
+    from {
+        transform: rotate(-3deg);
+    }
+
+    to {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
