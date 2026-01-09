@@ -1,16 +1,26 @@
-# React + Vite
+# 🌙 Bukber Choice App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, interactive web application to help groups decide where to hold their "Buka Puasa Bersama" (Bukber).
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive Venue Table**: Compare prices, facilities, and "Why it fits" reasons.
+- **Menu Slideshows**: View menus instantly with auto-playing thumbnails and a fullscreen lightbox.
+- **Comparison Mode**: Select any two venues and compare them side-by-side in a battle view.
+- **Final Selection**: "Lock in" your choice with a fun checklist interface.
+- **Winner Celebration**: Confetti explosion and specific congratulations for the chosen venue.
+- **WhatsApp Integration**: Send the final choice directly to your group chat with one click.
+- **Premium Design**: Fully animated Ramadan-themed background with swaying lanterns, skylines, and particle effects.
 
-## React Compiler
+## 🚀 Deploy
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+You can deploy this project to Vercel instantly:
 
-## Expanding the ESLint configuration
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?s=https://github.com/Frieslbelenoer/Bukber-Choice)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Built With
+
+- React
+- Vite
+- Canvas Confetti
+- CSS Modules (Glassmorphism & Animations)
